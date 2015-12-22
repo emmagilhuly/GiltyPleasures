@@ -1,3 +1,66 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+headcontainer {
+    background-image: url(/assets/images/"sqirl.JPG") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 550px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+body {
+    min-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+    font-size: 30px;
+    color: white;
+    position: relative;
+    margin-top: -10px;
+    padding-top: 30px;
+    margin-left: 75px;
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 25px;
+    color: white;
+    text-shadow: 1px 1px 1px #FFFFFF;
+    padding-left: 100px;
+    font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 25px;
+    color: white;
+    padding-left: 50px;
+    font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+    margin-top: 0px;
+    font-weight: 400;
+}
+
+p {
+    font-size: 25px;
+    color: #708090;
+    text-align: center;
+    font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+    font-weight: 200;
+    margin-top: 40px;
+}
+
+.parttwo {
+    text-align: center;
+}
+
+@media (max-width: 960px){
+
+}
