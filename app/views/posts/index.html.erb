@@ -1,30 +1,29 @@
 <div class="index">
 
 <div class = "parttwo">
-    <p> Eating and drinking my way through Jonathan Gold's 101 Best Restaurants and Eater LA </p>
+    <h5> Eating and drinking my way through Jonathan Gold's 101 Best Restaurants and Eater LA </h5>
     <img class="social" src="/images/social.png">
 </div>
 
-<p> Emma Gilhuly </p>
-<p> @gilty_pleasures </p><br>
+<h5> Emma Gilhuly </h5>
 
 <form style="margin:0; padding:0">
-<p> Subscribe for Updates:
+<h5> Subscribe for Updates:
 <input style="display: inline; "type="text" placeholder="email" name="email"/>
-</p>
-</form> <br>
+</h5>
+</form>
 
 <p id="notice"><%= notice %></p>
 
 <div class="indexpost">
 <% @posts.each do |post| %>
   <tr>
-    <td><%= link_to post.title, post %></td>
-    <td><%= post.body.truncate(250) %></td>
-  </tr> <br><br>
+    <p><%= link_to post.title, post %></p>
+    <p><%= post.body.truncate(250) %></p>
+  </tr> <br>
 <% end %>
 </div>
 
-<%= link_to 'New Post', new_post_path %>
+<p> <%= link_to 'New Post', new_post_path %> </p>
 
 </div>
