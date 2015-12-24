@@ -23,7 +23,9 @@
      height: 550px;
      margin-left: 0px;
      margin-right: 0px;
+     margin-bottom: 40px;
  }
+
 
  body {
      min-width: 100%;
@@ -37,28 +39,36 @@
      color: white;
      position: relative;
      margin-top: -10px;
-     padding-top: 30px;
-     margin-left: 75px;
+     padding-top: 5%;
+     margin-left: 6%;
      font-weight: 400;
  }
 
  h2 {
      font-size: 25px;
      color: white;
-     padding-left: 100px;
+     padding-left: 8%;
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
-     margin-top: 20px;
+     margin-top: -1%;
 }
 
  h3 {
      font-size: 25px;
-     color: white;
-     padding-left: 50px;
+     color: #708090;
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
-     margin-top: 0px;
      font-weight: 400;
+     padding-left: 4%;
+     margin-top: -1%;
  }
 
+
+h4 {
+  font-size: 20px;
+  text-align: center;
+  font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+  font-weight: 200px;
+  color: #708090;
+}
 
  p {
      font-size: 25px;
@@ -66,7 +76,6 @@
      text-align: center;
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
      font-weight: 200;
-     margin-top: 40px;
  }
 
  .parttwo {
@@ -76,3 +85,21 @@
  @media (max-width: 960px){
 
  }
+
+ a {
+   color: #FFA500;
+   font-weight: 300;
+
+   &:visited {
+     color: #FFA500;
+   }
+
+   &:hover {
+     color: #fff;
+   }
+ }
+
+.index {
+  margin-left: 5%;
+  margin-right: 5%
+}

@@ -1,12 +1,30 @@
+<div class="index">
+
 <div class = "parttwo">
     <p> Eating and drinking my way through Jonathan Gold's 101 Best Restaurants and Eater LA </p>
     <img class="social" src="/images/social.png">
 </div>
 
+<p> Emma Gilhuly </p>
+<p> @gilty_pleasures </p><br>
+
+<form style="margin:0; padding:0">
+<p> Subscribe for Updates:
+<input style="display: inline; "type="text" placeholder="email" name="email"/>
+</p>
+</form> <br>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing posts</h1>
-
-<%= render :partial => @posts %>
+<div class="indexpost">
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= link_to post.title, post %></td>
+    <td><%= post.body.truncate(250) %></td>
+  </tr> <br><br>
+<% end %>
+</div>
 
 <%= link_to 'New Post', new_post_path %>
+
+</div>
