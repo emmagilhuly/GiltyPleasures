@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'best/index'
+
   get 'restaurants/index'
 
   resources :posts do
