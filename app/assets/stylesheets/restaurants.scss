@@ -1,0 +1,21 @@
+// Place all the styles related to the restaurants controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.restaurants {
+  margin-left: 9%;
+  -webkit-column-count: 3; /* Chrome, Safari, Opera */
+  -moz-column-count: 3; /* Firefox */
+  column-count: 3;
+}
+
+h6 {
+  font-size: 30px;
+  color: #708090;
+  font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
+  font-weight: 200;
+  text-align: center;
+  margin-bottom: 10px;
+  margin-right: 9%;
+  color: #FFA500
+}

@@ -1,7 +1,32 @@
+<div class="index">
+
+<div class = "parttwo">
+    <h5> Eating and drinking my way through Jonathan Gold's 101 Best Restaurants and Eater LA </h5>
+    <a href="https://www.instagram.com/gilty_pleasures/"><img class="social" src="/images/insta.png"> </a>
+    <a href="https://www.facebook.com/giltyyy"><img class="social" src="/images/facebook.png"></a>
+    <a href="https://www.pinterest.com/emmagilhuly/"><img class="social" src="/images/pinterest.png"></a>
+    <a href=""><img class="social" src="/images/social.png"></a>
+</div>
+
+<h5> Emma Gilhuly </h5>
+
+<form style="margin:0; padding:0">
+<h5> Subscribe for Updates:
+<input style="display: inline; "type="text" placeholder="email" name="email"/>
+</h5>
+</form>
+
 <p id="notice"><%= notice %></p>
 
-<h1>Listing posts</h1>
+<div class="indexpost">
+<% @posts.reverse.each do |post| %>
+  <tr>
+    <p><%= link_to post.title, post %></p>
+    <p><%= post.body.truncate(250) %></p>
+  </tr> <br>
+<% end %>
+</div>
 
-<%= render :partial => @posts %>
+<p> <%= link_to 'New Post', new_post_path %> </p>
 
-<%= link_to 'New Post', new_post_path %>
+</div>
