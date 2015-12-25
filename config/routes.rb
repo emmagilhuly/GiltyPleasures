@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'restaurants/index'
+
   resources :posts do
     resources :comments, :only => [:create]
 end
