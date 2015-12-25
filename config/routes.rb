@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'about/index'
+
   get 'best/index'
 
   get 'restaurants/index'
