@@ -16,7 +16,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="indexpost">
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
   <tr>
     <p><%= link_to post.title, post %></p>
     <p><%= post.body.truncate(250) %></p>

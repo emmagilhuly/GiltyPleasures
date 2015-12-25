@@ -4,10 +4,10 @@
 <%= render :partial => @post %>
 
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+<p><%= link_to 'Edit', edit_post_path(@post) %> | <%= link_to 'Back', posts_path %></p>
 
-<h2>Comments</h2>
+
+<p>Comments</p>
 <div id="comments">
         <%= render :partial => @post.comments %>
 </div>
