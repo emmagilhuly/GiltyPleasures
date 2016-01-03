@@ -15,7 +15,8 @@
  */
 
  .headcontainer {
-     background: image-url("sqirl.JPG") no-repeat center center fixed;
+     background: image-url("sqirl.JPG") no-repeat center;
+     background-position: 0px 0px;
      -webkit-background-size: cover;
      -moz-background-size: cover;
      -o-background-size: cover;
@@ -27,8 +28,8 @@
  }
 
 .letters {
-  margin-left: 5%;
-  padding-top: 3%;
+  margin-left: 40px;
+  padding-top: 60px;
 }
 
  body {
@@ -39,7 +40,7 @@
 
  h1 {
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
-     font-size: 29px;
+     font-size: 40px;
      color: white;
      position: relative;
      margin-top: -10px;
@@ -48,20 +49,19 @@
  }
 
  h2 {
-     font-size: 28px;
+     font-size: 35px;
      color: white;
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
-     margin-top: -.5%;
-     margin-left: 5%;
+     margin-left: 6.5%;
+     margin-top: -.08%;
      text-shadow: white 0 0 0.2em
 }
 
  h3 {
-     font-size: 23px;
+     font-size: 30px;
      color: #708090;
      font-family: 'Arial Narrow','Nimbus Sans L',sans-serif;
      font-weight: 400;
-     margin-top: -.5%;
      margin-left: 2%
  }
 
@@ -97,10 +97,8 @@ h5 {
 
  .parttwo {
      text-align: center;
- }
-
- @media (max-width: 960px){
-
+     margin-top: 5%;
+     margin-bottom: 3%;
  }
 
  a {
@@ -119,4 +117,41 @@ h5 {
 .index {
   margin-left: 5%;
   margin-right: 5%
+}
+
+@media (max-width: 1200px) {
+  .letters {
+    margin-left: 20px;
+    padding-top: 40px;
+  }
+
+  h1 {
+    font-size: 35px;
+  }
+
+  h2 {
+    font-size: 30px;
+  }
+
+  h3 {
+    font-size: 25px;
+    margin-left: 3%
+  }
+
+}
+
+@media (max-width: 1000px) {
+  .letters {
+    margin-left: 10px;
+  }
+
+  h3 {
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 940px) {
+  .letters {
+    background-color: #ff0080;
+  }
 }

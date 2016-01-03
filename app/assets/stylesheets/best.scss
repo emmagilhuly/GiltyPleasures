@@ -3,8 +3,26 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .gpbest {
-  margin-left: 7%;
-  -webkit-column-count: 3; /* Chrome, Safari, Opera */
-  -moz-column-count: 3; /* Firefox */
-  column-count: 3;
+  margin-left: 15%;
+  font-size: 15px;
+  margin-bottom: 5%
+}
+
+p.best {
+  font-size: 20px;
+}
+
+p.besttitles {
+  font-size: 25px;
+  color: #FFA500;
+}
+
+p.giltiest {
+  font-size: 30px;
+  color: #FFA500;
+  text-align: center;
+  margin-top: 5%;
+  margin-bottom: 4%;
+  font-weight: 200;
+  text-decoration: underline;
 }
