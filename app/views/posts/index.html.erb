@@ -27,9 +27,10 @@
           <tr>
             <p><%= link_to post.title, post %></p>
             <p><%= post.body.truncate(250) %></p>
+            <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr> <br>
         <% end %>
+          </tr> <br>
         <p> <%= link_to 'New Post', new_post_path %> </p>
         </div>
       </div>
