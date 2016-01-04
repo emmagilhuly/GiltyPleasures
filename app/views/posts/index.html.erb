@@ -21,27 +21,31 @@
 
 <div class="container allposts">
   <div class="row">
-      <div class="col-md-8">
-        <div class="indexpost">
-        <% @posts.reverse.each do |post| %>
+      <div class="col-md-8 indexpost">
+        <% @posts.last(5).reverse.each do |post| %>
           <tr>
             <p><%= link_to post.title, post %></p>
             <p><%= post.body.truncate(250) %></p>
             <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
+            <p><%= link_to "Read more", post %></p>
             <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
           </tr> <br>
-        <p> <%= link_to 'New Post', new_post_path %> </p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <h6> Featured Posts </h6>
-        <% @posts.order("RANDOM()").each do |post| %>
-          <tr>
-            <p><%= link_to post.title, post %></p>
-            <p><%= post.body.truncate(100) %></p>
-            <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
         <% end %>
+        <div class="digg_pagination">
+            <%= will_paginate @posts, :container => false %>
+        </div>
+        <p> <%= link_to 'New Post', new_post_path %> </p>
+      </div>
+      <div class="col-md-4 sidebar">
+        <h6> Featured Posts </h6>
+        <div class="sidebarposts"
+          <% @posts.limit(8).order("RANDOM()").each do |post| %>
+            <tr>
+              <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
+              <p class="sidebar"><%= link_to post.title, post %></p>
+              <p class="sidebar"><%= post.body.truncate(100) %></p>
+          <% end %>
+        </div>
       </div>
   </div>
 </div>
