@@ -27,6 +27,7 @@
           <tr>
             <p><%= link_to post.title, post %></p>
             <p><%= post.body.truncate(250) %></p>
+            <!-- <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
           </tr> <br>
         <% end %>
         <p> <%= link_to 'New Post', new_post_path %> </p>
