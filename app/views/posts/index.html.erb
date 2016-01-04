@@ -2,9 +2,9 @@
 
 <div class = "parttwo">
     <h5> Eating and drinking my way through Jonathan Gold's 101 Best Restaurants and Eater LA </h5><br>
-    <a href="https://www.instagram.com/gilty_pleasures/"><img class="social" src="/images/insta.png"> </a>
-    <a href="https://www.facebook.com/giltyyy"><img class="social" src="/images/facebook.png"></a>
-    <a href="https://www.pinterest.com/emmagilhuly/"><img class="social" src="/images/pinterest.png"></a>
+    <%= link_to image_tag("insta.png", :class => "social", :alt => "Instagram"), "https://www.instagram.com/gilty_pleasures/", :target => "_blank" %>
+    <%= link_to image_tag("facebook.png", :class => "social", :alt => "Facebook"), "https://www.facebook.com/giltyyy", :target => "_blank" %>
+    <%= link_to image_tag("pinterest.png", :class => "social", :alt => "Pinterest"), "https://www.pinterest.com/emmagilhuly/", :target => "_blank" %>
     <a href=""><img class="social" src="/images/social.png"></a>
 </div>
 
@@ -21,29 +21,31 @@
 
 <div class="container allposts">
   <div class="row">
-      <div class="col-md-8 indexpost">
+    <div class="col-md-8">
         <% @posts.last(5).reverse.each do |post| %>
           <tr>
             <p><%= link_to post.title, post %></p>
             <p><%= post.body.truncate(250) %></p>
-            <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
-            <p><%= link_to "Read more", post %></p>
-            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-          </tr> <br>
+            <div class="indexpost">
+              <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
+              <button> <%= link_to "Read more", post %></button><br>
+            </div>
+            <!-- <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+          </tr> <br><br><br>
         <% end %>
         <div class="digg_pagination">
             <%= will_paginate @posts, :container => false %>
         </div>
-        <p> <%= link_to 'New Post', new_post_path %> </p>
+        <!-- <p> <%= link_to 'New Post', new_post_path %> </p> -->
       </div>
       <div class="col-md-4 sidebar">
         <h6> Featured Posts </h6>
         <div class="sidebarposts"
-          <% @posts.limit(8).order("RANDOM()").each do |post| %>
+          <% @posts.limit(7).order("RANDOM()").each do |post| %>
             <tr>
               <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
               <p class="sidebar"><%= link_to post.title, post %></p>
-              <p class="sidebar"><%= post.body.truncate(100) %></p>
+              <p class="sidebar"><%= post.body.truncate(100) %></p><br><br>
           <% end %>
         </div>
       </div>

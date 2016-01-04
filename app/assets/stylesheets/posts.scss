@@ -9,6 +9,10 @@
   margin-bottom: 5%;
 }
 
+.indexpost {
+  text-align: center
+}
+
 .new {
   text-align: center;
 }
@@ -38,11 +42,9 @@ p.sidebar {
 }
 
 .digg_pagination {
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
   background: white;
   cursor: default;
+  float: center;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
