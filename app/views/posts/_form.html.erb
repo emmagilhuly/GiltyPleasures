@@ -25,12 +25,12 @@
     <%= f.fields_for :post_attachments do |p| %>
      <div class="field">
        <p> <%= p.label :Picture %> </p>
-       <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %> 
+       <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
     </div>
     <% end %>
      <% if params[:controller] == "post" && params[:action] == "edit" %>
        <% @post.post_attachments.each do |p| %>
-         <%= image_tag p.avatar, :size => "150x150" %>
+         <%= image_tag p.avatar%>
        <% end %>
      <% end %>
  </div>
