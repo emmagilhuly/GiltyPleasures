@@ -36,6 +36,12 @@
       </div>
       <div class="col-md-4">
         <h6> Featured Posts </h6>
+        <% @posts.order("RANDOM()").each do |post| %>
+          <tr>
+            <p><%= link_to post.title, post %></p>
+            <p><%= post.body.truncate(100) %></p>
+            <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
+        <% end %>
       </div>
   </div>
 </div>
