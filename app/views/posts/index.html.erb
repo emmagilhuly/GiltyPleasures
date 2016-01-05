@@ -43,7 +43,7 @@
       <div class="col-md-4 sidebar">
         <h6> Featured Posts </h6><br>
         <div class="sidebarposts">
-          <% @posts.limit(10).order("RANDOM()").each do |post| %>
+          <% @posts.limit(6).order("RANDOM()").each do |post| %>
             <% if post.post_attachments.first %>
                 <%= image_tag (post.post_attachments.first.try(:avatar_url)) %> <br><br>
                 <p class="sidebar"><%= link_to post.title, post %></p> <br><br>

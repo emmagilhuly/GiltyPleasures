@@ -3,9 +3,9 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .gpbest {
-  margin-left: 15%;
   font-size: 15px;
-  margin-bottom: 5%
+  margin-bottom: 5%;
+  margin-left: 5%
 }
 
 p.best {
@@ -13,7 +13,7 @@ p.best {
 }
 
 p.besttitles {
-  font-size: 25px;
+  font-size: 30px;
   color: #FFA500;
 }
 
@@ -25,4 +25,14 @@ p.giltiest {
   margin-bottom: 4%;
   font-weight: 200;
   text-decoration: underline;
+}
+
+img.gpbest {
+  width: 47%;
+  margin-left: 30%;
+}
+
+p.captions {
+  text-align: center;
+  margin-left: 8%
 }
