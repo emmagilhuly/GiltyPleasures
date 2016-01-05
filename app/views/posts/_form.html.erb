@@ -1,8 +1,7 @@
-<%= form_for(@post) do |f| %>
+<%= form_for(@post, :html => { :multipart => true }) do |f| %>
   <% if @post.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
       <ul>
       <% @post.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -21,22 +20,20 @@
     <%= f.text_field :body %>
   </div>
 
-  <div class="field">
-    <%= f.fields_for :post_attachments do |p| %>
-     <div class="field">
-       <p> <%= p.label :Picture %> </p>
-       <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
+  <%= f.fields_for :post_attachments do |p| %>
+    <div class="field">
+      <%= p.label :avatar %><br>
+      <%= p.file_field :avatar, :multiple => true, name: "post_attachments[avatar][]" %>
     </div>
+  <% end %>
+
+  <% if params[:controller] == "post" && params[:action] == "edit" %>
+    <% @post.post_attachments.each do |p| %>
+      <%= image_tag p.avatar, :size => "150x150" %>
     <% end %>
-     <% if params[:controller] == "post" && params[:action] == "edit" %>
-       <% @post.post_attachments.each do |p| %>
-         <%= image_tag p.avatar%>
-       <% end %>
-     <% end %>
- </div>
+  <% end %>
 
- <div class="actions">
-   <%= f.submit %>
- </div>
-
+  <div class="actions">
+    <%= f.submit %>
+  </div>
 <% end %>

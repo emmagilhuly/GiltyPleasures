@@ -19,6 +19,7 @@ class PostAttachmentsController < ApplicationController
 
   # GET /post_attachments/1/edit
   def edit
+    @post_attachment = PostAttachment.find(params[:id])
   end
 
   # POST /post_attachments

@@ -34,8 +34,6 @@ class PostsController < ApplicationController
 
      respond_to do |format|
        if @post.save
-         format.html { redirect_to @post, notice: 'Post was successfully created.' }
-         format.json { render :show, status: :created, location: @post }
          params[:post_attachments]['avatar'].each do |a|
             @post_attachment = @post.post_attachments.create!(:avatar => a, :post_id => @post.id)
          end
@@ -57,8 +55,8 @@ class PostsController < ApplicationController
           @post_attachment = @post.post_attachments.create!(:avatar => a, :post_id => @post.id)
         end
       end
+    end
    end
- end
 
   # DELETE /posts/1
   # DELETE /posts/1.json

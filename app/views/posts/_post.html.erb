@@ -3,5 +3,5 @@
 
 <% @post_attachments.each do |p| %>
   <%= image_tag p.avatar_url %> <br>
-  <!-- <%= link_to "Destroy", p, method: :delete %> -->
+  <%= link_to "Destroy", p, method: :delete %><br>
 <% end %>

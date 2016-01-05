@@ -27,10 +27,12 @@
             <p><%= link_to post.title, post %></p>
             <p><%= post.body.truncate(250) %></p>
             <div class="indexpost">
-              <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
+              <% if post.post_attachments.first %>
+                <%= image_tag (post.post_attachments.first.try(:avatar_url)) %> <br>
+              <% end %>
               <button> <%= link_to "Read more", post %></button><br>
             </div>
-            <!-- <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
+            <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
           </tr> <br><br><br>
         <% end %>
         <div class="digg_pagination">
@@ -39,13 +41,13 @@
         <!-- <p> <%= link_to 'New Post', new_post_path %> </p> -->
       </div>
       <div class="col-md-4 sidebar">
-        <h6> Featured Posts </h6>
-        <div class="sidebarposts"
-          <% @posts.limit(7).order("RANDOM()").each do |post| %>
-            <tr>
-              <%= image_tag (post.post_attachments.try(:first).try(:avatar_url)) %> <br>
-              <p class="sidebar"><%= link_to post.title, post %></p>
-              <p class="sidebar"><%= post.body.truncate(100) %></p><br><br>
+        <h6> Featured Posts </h6><br>
+        <div class="sidebarposts">
+          <% @posts.limit(10).order("RANDOM()").each do |post| %>
+            <% if post.post_attachments.first %>
+                <%= image_tag (post.post_attachments.first.try(:avatar_url)) %> <br><br>
+                <p class="sidebar"><%= link_to post.title, post %></p> <br><br>
+            <% end %>
           <% end %>
         </div>
       </div>
