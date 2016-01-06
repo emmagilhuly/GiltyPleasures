@@ -1,2 +1,7 @@
-<p><%= link_to_unless_current post.title, post %></p>
+<p><%= link_to_unless_current post.title, post %></p><br>
 <%= simple_format post.body %>
+
+<% @post_attachments.each do |p| %>
+  <%= image_tag p.avatar_url %> <br>
+  <%= link_to "Destroy", p, method: :delete %><br>
+<% end %>
