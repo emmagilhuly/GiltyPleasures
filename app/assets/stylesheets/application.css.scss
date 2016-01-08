@@ -12,7 +12,8 @@
  *
  *= require_tree .
  *= require_self
- */
+ *= require bootstrap
+  */
 
  .headcontainer {
      background: image-url("sqirl.JPG") no-repeat center;
