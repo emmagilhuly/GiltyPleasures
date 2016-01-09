@@ -16,6 +16,7 @@ gem 'coffee-rails', '~> 4.1.0'
 
 gem 'carrierwave'
 
+
 gem 'will_paginate', '~> 3.0.6'
 
 # Use jquery as the JavaScript library
@@ -26,8 +27,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
-gem "fog-aws"
 
 
 # Use ActiveModel has_secure_password
