@@ -51,19 +51,13 @@ class PostsController < ApplicationController
   # PATCH/PUT /posts/1.json
 
   def update
-    respond_to do |format|
+    update_attachments if params[:post_attachments]
       if @post.update(post_params)
-          @post_attachment = @post.post_attachment.update!(:avatar => a, :post_id => @post.id)
-       end
-        format.html { redirect_to @post, notice: 'Post was successfully updated.' }
-        format.json { render :show, status: :ok, location: @post }
+          redirect_to @post, notice: 'Post was successfully updated.'
       else
-        format.html { render :edit }
-        format.json { render json: @post.errors, status: :unprocessable_entity }
+        render :edit
       end
-    end
   end
-
 
   # DELETE /posts/1
   # DELETE /posts/1.json
@@ -73,6 +67,12 @@ class PostsController < ApplicationController
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
+
+  def update_attachments
+      params[:post_attachments]['avatar'].each do |a|
+        @post_attachment = @post.post_attachments.create!(:avatar => a)
+      end
   end
 
   private
