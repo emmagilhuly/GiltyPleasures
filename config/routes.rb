@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   resources :post_attachments
   resources :post_attachments
+
+  root 'posts#index'
+  
   get 'about/index'
 
   get 'best/index'
