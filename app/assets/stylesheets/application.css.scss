@@ -155,10 +155,8 @@ img.social {
   h3 {
     margin-left: 2%;
   }
-}
 
-@media (max-width: 940px) {
-  .letters {
-    background-color: #ff0080;
+  .sidebar {
+    display: none;
   }
 }
